@@ -1,0 +1,31 @@
+article{
+  margin-bottom: 1em;
+  padding: 1em;
+  border-bottom: 1px solid lightblue;
+}
+  h2 {
+  margin-bottom: 0;
+}
+  section.post-summary {
+
+  	padding: 0.5em;
+  }
+  
+  section.post-body {
+	padding-top: 1em;
+
+  }
+
+  .img-show {
+display: block;
+margin-bottom: 2em;  
+
+  }
+  .thumb {
+
+    float: left;
+    margin-right: 1em; 
+  }
+  .editor {
+    min-height: 300px;
+  }

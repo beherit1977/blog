@@ -15,8 +15,8 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     if @post.save
-      redirect_to @post
-    else render 'new'
+      redirect_to @post, success: 'Статья успешно создана'
+    else render :new, danger: 'Статья не создана'
     end
   end
 
@@ -25,20 +25,20 @@ class PostsController < ApplicationController
 
   def update
     if @post.update_attributes(post_params)
-      redirect_to @post
+      redirect_to @post, success: 'Статья успешно обновлена'
     else
-      render :edit
-     end
+      render :edit, danger: 'Статья не обновлена'
+    end
   end
 
   def destroy
     @post.destroy
-    redirect_to posts_path
+    redirect_to posts_path, success: 'Статья успешно удалена'
   end
 
    private
      def post_params
-       params.require(:post).permit(:title, :summary, :body)
+       params.require(:post).permit(:title, :summary, :body, :image)
      end
 
      def set_post
